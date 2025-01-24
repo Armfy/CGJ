@@ -17,7 +17,7 @@ var config = {
       gravity: { y: 300 } // gravité verticale
     }
   },
-  scene: [] // Mettre le menu en première position
+  scene: [menu] // Mettre le menu en première position
 };
 
 // création et lancement du jeu
