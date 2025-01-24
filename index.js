@@ -1,4 +1,5 @@
 import menu from "/js/menu.js";
+import intro from "/js/intro.js";
 
 /***********************************************************************/
 /** CONFIGURATION GLOBALE DU JEU ET LANCEMENT 
@@ -20,7 +21,7 @@ var config = {
       debug: false
     }
   },
-  scene: [menu]
+  scene: [menu, intro]
 };
 
 // Initialize the game after defining the config
