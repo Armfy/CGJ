@@ -1,4 +1,4 @@
-import menu from "/menu.js";
+import menu from "/js/menu.js";
 
 /***********************************************************************/
 /** CONFIGURATION GLOBALE DU JEU ET LANCEMENT 
@@ -16,12 +16,23 @@ var config = {
   physics: {
     default: "arcade",
     arcade: {
-      gravity: { y: 0 }, // gravité verticale
-      debug: true
+      gravity: { y: 0 },
+      debug: false
     }
   },
   scene: [menu]
 };
 
-// création et lancement du jeu
-var game = new Phaser.Game(config);
+// Initialize the game after defining the config
+const game = new Phaser.Game(config);
+game.config.interface = [];
+game.config.slotTexts = [];
+game.config.slot = [null,null,null,null];
+
+
+game.config.textbox;
+game.config.textTB = [];
+
+game.config.interact_objects_list =[];
+
+game.scene.start("menu");
