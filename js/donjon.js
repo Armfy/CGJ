@@ -15,7 +15,7 @@ export default class intro extends Phaser.Scene {
 
         // Chargement du sprite du joueur
         this.load.spritesheet("player", "/images/spritesheet-melo.png", {
-            frameWidth: 105,
+            frameWidth: 111,
             frameHeight: 190,
         });
     }
@@ -27,10 +27,24 @@ export default class intro extends Phaser.Scene {
         // Chargement du jeu de tuiles
         const tileset = carteDuNiveau.addTilesetImage("tileset");
 
-        // Chargement des calques
-        const backgroundLayer = carteDuNiveau.createLayer("calque_background", tileset);
-        const backgroundLayer2 = carteDuNiveau.createLayer("calque_background_2", tileset);
-        const plateformes = carteDuNiveau.createLayer("calque_plateforme", tileset);
+       // chargement du calque "calque_backgroung"
+        const backgroundLayer = carteDuNiveau.createLayer(
+        "calque_background",
+        tileset
+        );
+ 
+  // chargement du second calque "calque_backgroung"
+  const backgroundLayer2 = carteDuNiveau.createLayer(
+    "calque_background_2",
+    tileset
+  );
+ 
+  // chargement du calque "calque_plateformes""
+  const plateformes = carteDuNiveau.createLayer(
+    "calque_plateforme",
+    tileset
+  );
+ 
 
         // Définition des objets solides
         plateformes.setCollisionByProperty({ estSolide: true });
@@ -53,20 +67,6 @@ export default class intro extends Phaser.Scene {
             key: "stand-back",
             frames: this.anims.generateFrameNumbers("player", { start: 5, end: 7 }),
             frameRate: 5,
-            repeat: -1,
-        });
-
-        this.anims.create({
-            key: "walk-face",
-            frames: this.anims.generateFrameNumbers("player", { start: 11, end: 13 }),
-            frameRate: 10,
-            repeat: -1,
-        });
-
-        this.anims.create({
-            key: "walk-back",
-            frames: this.anims.generateFrameNumbers("player", { start: 14, end: 16 }),
-            frameRate: 10,
             repeat: -1,
         });
 
@@ -119,11 +119,11 @@ export default class intro extends Phaser.Scene {
         // Déplacements verticaux
         if (cursors.up.isDown) {
             player.setVelocityY(-160);
-            player.anims.play("walk-back", true);
+            player.anims.play("stand-back", true);
             player.direction = "up";
         } else if (cursors.down.isDown) {
             player.setVelocityY(160);
-            player.anims.play("walk-face", true);
+            player.anims.play("stand-face", true);
             player.direction = "down";
         }
 
