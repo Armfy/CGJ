@@ -1,5 +1,6 @@
 import menu from "/js/menu.js";
 import intro from "/js/intro.js";
+import map_donjon from "/js/donjon.js";
 
 /***********************************************************************/
 /** CONFIGURATION GLOBALE DU JEU ET LANCEMENT 
@@ -21,7 +22,7 @@ var config = {
       debug: false
     }
   },
-  scene: [menu, intro]
+  scene: [menu, intro, map_donjon]
 };
 
 // Initialize the game after defining the config

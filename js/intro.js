@@ -24,7 +24,7 @@ export default class intro extends Phaser.Scene {
     });
 
     this.input.on('pointerdown', () => {
-      this.scene.start('chambre');
+      this.scene.start('map_donjon');
     });
   }
 }
